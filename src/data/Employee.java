@@ -57,7 +57,7 @@ public class Employee {
 		this.position = position;
 	}
 	public String toString () {
-		return "Pracownik: " + firstName + lastName + " zatrudniony jest na: " + contractWorkingTime;
+		return "Pracownik: " + firstName + lastName + " zatrudniony jest na: " + contractWorkingTime + " etatu, na stanowisku: " + position;
 	}
 	
 	public Employee (String firstName, String lastName, double contractWorkingTime, String position) {
@@ -66,7 +66,7 @@ public class Employee {
 		this.contractWorkingTime=contractWorkingTime;
 		this.position=position;
 	}
-// Obliczenia wyp³aty dla urzêdnika:	
+// Obliczenia wypï¿½aty dla urzï¿½dnika:	
 	private double basicWage = 1400; 
 	
 	
@@ -79,16 +79,17 @@ public class Employee {
 		}
 	
 	double officialPayroll = 0;
+	double roundOfficialPaayroll = 0;
 	
-	
-		public double officialPayrollFormula (double discretionalyBonus) { //Random z przedzia³u 0-50)
+		public double officialPayrollFormula (double discretionalyBonus) { //Random z przedziaï¿½u 0-50)
 			officialPayroll = getContractWorkingTime()*basicWage+ basicWage*(discretionalyBonus*0.01);
-			return officialPayroll;
+			roundOfficialPaayroll = (double) Math.round(officialPayroll*100)/100;
+			return roundOfficialPaayroll;
 		}
 		public void officialPrintInfo () {
-			System.out.println("Wysokoœæ wyp³aty" + getFirstName()+" " +getLastName()+ " wynosi: " + officialPayroll);
+			System.out.println("Wysokoï¿½ï¿½ wypï¿½aty" + getFirstName()+" " +getLastName()+ " wynosi: " + roundOfficialPaayroll);
 		}
-// Obliczenia wyp³¹ty dla robotnika:	
+// Obliczenia wypï¿½ï¿½ty dla robotnika:	
 	private double wagePerHour=15;
 	private double hoursLimit=42;
 		
@@ -105,12 +106,12 @@ public class Employee {
 		}
 		
 		public void workerPrintInfo () {
-			System.out.println("Wysokoœæ wyp³aty" + getFirstName()+" " +getLastName()+ " wynosi: " + workerPeyroll);
+			System.out.println("Wysokoï¿½ï¿½ wypï¿½aty" + getFirstName()+" " +getLastName()+ " wynosi: " + workerPeyroll);
 		}
-		public boolean contains(String lastName) {
-			// TODO Auto-generated method stub
-			return false;
-		}
+
+
+
+}
 		
 			
-}
+

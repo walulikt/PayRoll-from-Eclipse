@@ -13,15 +13,12 @@ public class Company {
 		company = new ArrayList <Employee> ();
 		
 		}
-	
-	
-	
-	String lastNameSearch = "Kowalski";
+
 public void isThere (ArrayList <Employee> sample, String lastName) {
 	
-	for (Employee empLastName: sample) {
-		if (empLastName.contains(lastName));
-		System.out.println("Pracownik o nazwisku: " + lastName + " jest zatrudniony. Jego dane to: " + sample.indexOf(empLastName));
+	for (Employee employee: sample) {
+		if (employee.getLastName().equals(lastName))
+		System.out.println("Pracownik o nazwisku: " + lastName + " jest zatrudniony. Jego dane to: " + employee.toString() );
 	}
 }
 }

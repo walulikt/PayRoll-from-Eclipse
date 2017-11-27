@@ -18,9 +18,9 @@ public class Peyroll {
 			
 		}
 		for (int i=50; i<100; i++) {
-			employee.add(new Employee("Adam " + i, "Nowa " + i, 1, "Worker" ));
+			employee.add(new Employee("Adam " + i, "Nowak " + i, 1, "Worker" ));
 		}
-		System.out.println ("Rozmiar kolekcji Book typu LinkedList: " +employee.size());
+		System.out.println ("Rozmiar kolekcji employee typu ArrayList: " +employee.size());
 	
 	Random randomBonus = new Random ();
 	Random randomHours = new Random ();
@@ -35,19 +35,14 @@ public class Peyroll {
 	}
 	
 	for (Employee isThere: employee) {
-		if (isThere.getLastName()=="Kowalski") {
+		if (isThere.getLastName().equals ("Kowalski 0")) {
 			System.out.println("W firmie pracuje: " + isThere.toString());
 		}
 	}
 	
 	Company comp = new Company ();
-	comp.isThere(employee, "Kowalski");
-	
-//	String lastNameExp = "Kowalski 10";
-//	for (Employee isThere2: employee) {
-//		employee.contains(lastNameExp);
-//		System.out.println("Jest pracownik o nazwiksu: " + lastNameExp + " Jego dane: "+ isThere2.toString());
-//	}
+	comp.isThere(employee, "Nowak 51");
+
 	}
 
 }
